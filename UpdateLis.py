@@ -15,34 +15,17 @@ def updatelis( local_dir, remote_dir, hostname, port, password ):
     print( args )
     '''
     try:
-        #proc = subprocess.Popen( updatelis_command_string, stderr = subprocess.STDOUT )
         subprocess.check_call( updatelis_command_string )
     except subprocess.CalledProcessError:
         print( "error occured!!!\n")
-    #pipe = subprocess.Popen( updatelis_command_string ).stdout
-    '''
-    if ( pipe != None and pipe %256 ) :
-        print( ' There is some errors ')
-        return 1
-    else :
-        print( " Excute OK!")
-        return 0
-    while pipe.poll() is None:
-        time.sleep(1)
-    return_code = pipe.return_code
-    print( return_code )
-    sys.exit( return_code )
-    '''
 
 host = '10.2.0.51'
 port = 22
 password = 'root1234'
-
 remote_dir = "/tmp/user_projects/web/lis/ui/"
-
 local_dir = "d:/tmp/lisupdate/"
 
-if ( not os.path.exists( local_dir )):
+if ( os.listdir( local_dir ) == ""):
     print( 'No need to Update!, Bacause ' + local_dir + ' Not exits!!!\\n')
     sys.exit()
 else:
