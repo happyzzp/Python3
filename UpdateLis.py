@@ -21,7 +21,7 @@ def updatelis( local_dir, remote_dir, hostname, port, password ):
 
 host = '10.2.0.51'
 port = 22
-password = 'root1234'
+password = 'xxxxxx'
 remote_dir = "/tmp/user_projects/web/lis/ui/"
 local_dir = "d:/tmp/lisupdate/"
 
